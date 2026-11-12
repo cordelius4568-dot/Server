@@ -1,4 +1,4 @@
-package com.devnet.distrodurum;
+package com.devnet.server;
 
 import android.Manifest;
 import android.content.Context;

@@ -1,4 +1,4 @@
-// npm run apk  ->  distrodurum.apk (debug imzalı; doğrudan kurulabilir)
+// npm run apk  ->  server-status.apk (debug imzalı; doğrudan kurulabilir)
 import fs from 'node:fs';
 import { execSync } from 'node:child_process';
 
@@ -11,5 +11,5 @@ run('node scripts/patch-android.mjs');
 run('npx cap sync android');
 if (process.platform !== 'win32') fs.chmodSync('android/gradlew', 0o755);
 run(process.platform === 'win32' ? 'gradlew.bat assembleDebug' : './gradlew assembleDebug', { cwd: 'android' });
-fs.copyFileSync('android/app/build/outputs/apk/debug/app-debug.apk', 'distrodurum.apk');
-console.log('\nHazır: distrodurum.apk');
+fs.copyFileSync('android/app/build/outputs/apk/debug/app-debug.apk', 'server-status.apk');
+console.log('\nHazır: server-status.apk');

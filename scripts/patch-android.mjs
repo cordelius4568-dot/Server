@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const PKG = 'com.devnet.distrodurum';
+const PKG = 'com.devnet.server';
 const javaDir = path.resolve('android/app/src/main/java', ...PKG.split('.'));
 const manifestPath = path.resolve('android/app/src/main/AndroidManifest.xml');
 if (!fs.existsSync(manifestPath)) throw new Error('android/ yok: önce `npx cap add android` çalışmalı.');

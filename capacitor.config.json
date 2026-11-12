@@ -1,6 +1,6 @@
 {
-  "appId": "com.devnet.distrodurum",
-  "appName": "distrodurum",
+  "appId": "com.devnet.server",
+  "appName": "Server Status",
   "webDir": "dist",
   "server": {
     "androidScheme": "http",

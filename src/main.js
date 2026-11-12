@@ -7,7 +7,7 @@ import { getState, retryStorage, native, Devnet } from './api.js';
 const PINNED = 'debian-13-trixie'; // ana sunucu: her zaman en üstte
 const ROW = 36;
 const VISIBLE = 8;
-const TICK_MS = 2000;
+const TICK_MS = 60000;
 const FEED_MAX = 8;
 const WINDOW_MS = 5 * 60 * 1000; // +/− özeti için pencere
 const KEEP_MS = 60 * 60 * 1000; // bellekte/yüklemede tutulan geçmiş

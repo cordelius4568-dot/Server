@@ -1,4 +1,4 @@
-package com.devnet.distrodurum;
+package com.devnet.server;
 
 import android.os.Bundle;
 import com.getcapacitor.BridgeActivity;

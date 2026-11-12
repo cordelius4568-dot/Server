@@ -1,4 +1,4 @@
-package com.devnet.distrodurum;
+package com.devnet.server;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -20,14 +20,14 @@ public class KeepAliveService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (Build.VERSION.SDK_INT >= 26) {
-            NotificationChannel ch = new NotificationChannel(CHANNEL, "distrodurum", NotificationManager.IMPORTANCE_LOW);
+            NotificationChannel ch = new NotificationChannel(CHANNEL, "Server Status", NotificationManager.IMPORTANCE_LOW);
             ((NotificationManager) getSystemService(NOTIFICATION_SERVICE)).createNotificationChannel(ch);
         }
         Intent open = new Intent(this, MainActivity.class);
         int piFlags = Build.VERSION.SDK_INT >= 23 ? PendingIntent.FLAG_IMMUTABLE : 0;
         PendingIntent pi = PendingIntent.getActivity(this, 0, open, piFlags);
         Notification n = new NotificationCompat.Builder(this, CHANNEL)
-                .setContentTitle("distrodurum çalışıyor")
+                .setContentTitle("Server Status çalışıyor")
                 .setContentText("Sunucu her gün 05:00–23:00 arası kayıt alıyor")
                 .setSmallIcon(android.R.drawable.stat_notify_sync)
                 .setContentIntent(pi)
@@ -40,7 +40,7 @@ public class KeepAliveService extends Service {
         }
         if (wakeLock == null) {
             PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "distrodurum:node");
+            wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "serverstatus:node");
             wakeLock.setReferenceCounted(false);
             wakeLock.acquire();
         }
