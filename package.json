@@ -1,0 +1,25 @@
+{
+  "name": "distro-status",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "apk": "node scripts/build-apk.mjs"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10",
+    "simple-icons": "^13.0.0"
+  },
+  "dependencies": {
+    "axiodb": "latest",
+    "capacitor-nodejs": "latest"
+  },
+  "optionalDependencies": {
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  }
+}

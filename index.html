@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dağıtım Durumu</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐧</text></svg>" />
+  </head>
+  <body>
+    <header class="top" id="top">
+      <div class="bar">
+        <a class="brand" href="#top"><span data-fan="brand"></span><b>distro</b><span class="light">durum</span></a>
+        <nav id="nav" aria-label="Ana menü">
+          <a href="#top" aria-current="true">Ana Sayfa</a>
+          <a href="#sunucu">Sunucu</a>
+          <a href="#dagitimlar">Dağıtımlar</a>
+          <a href="#degisiklikler">Değişiklikler</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page">
+      <main class="main">
+        <section class="intro" id="sunucu">
+          <h2>Canlı sunucu durumu</h2>
+          <p class="using">Bu sunucu şu anda kullanıyor <span data-fan="on"></span><img id="using-icon" class="sicon-sm" alt="" hidden><b>4</b> RTX Pro 6000 Blackwell.</p>
+          <div class="metrics">
+            <div class="metric">
+              <div class="mhead"><span>CPU</span><span id="cpu-text"></span></div>
+              <div class="bar-track"><i id="cpu-bar"></i></div>
+            </div>
+            <div class="metric">
+              <div class="mhead"><span>RAM</span><span id="ram-text"></span></div>
+              <div class="bar-track"><i id="ram-bar"></i></div>
+            </div>
+          </div>
+          <p class="status" id="status" hidden></p>
+          <p class="dbline" id="dbline" hidden></p>
+        </section>
+
+        <section class="distros" id="dagitimlar">
+          <div class="tab-bar"><h3 class="tab">Dağıtımlar</h3></div>
+          <p class="qline" id="qline" hidden></p>
+          <div class="cols"><span>Dağıtım</span><span>GPU</span></div>
+          <ul class="list" id="list"></ul>
+          <p class="empty" id="empty" hidden>Aramayla eşleşen dağıtım yok.</p>
+        </section>
+      </main>
+
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q">Dağıtım Ara:</label>
+        <input id="q" type="search" autocomplete="off" />
+      </form>
+
+      <aside class="recent" id="degisiklikler">
+        <h3>Son Değişiklikler</h3>
+        <p class="qsum" id="qsum" hidden></p>
+        <ul id="feed"></ul>
+      </aside>
+    </div>
+
+    <footer class="foot">
+      <p>Veriler rastgele üretilir ve 2 saniyede bir güncellenir.</p>
+      <p>Dağıtım adları ve markaları ilgili sahiplerine aittir.</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

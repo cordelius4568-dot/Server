@@ -1,0 +1,15 @@
+{
+  "appId": "com.devnet.distrodurum",
+  "appName": "distrodurum",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "plugins": {
+    "CapacitorNodeJS": {
+      "nodeDir": "nodejs",
+      "startMode": "auto"
+    }
+  }
+}
