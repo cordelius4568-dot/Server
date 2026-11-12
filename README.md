@@ -9,7 +9,7 @@ Simülasyon sunucuda (`server/sim.mjs`) çalışır, değişiklikler AxioDB ile 
 Sistem her gün 05:00'te başlar, 23:00'te durur, ertesi gün kendiliğinden devam eder (`schedule` ayarı `server/sim.mjs`).
 
 ## APK
-`npm run apk` → `distrodurum.apk` (Node.js 20+, JDK 21, Android SDK gerekir). Termux'ta SDK çalışmaz;
+`npm run apk` → `distrodurum.apk` (Node.js 20+, JDK 17, Android SDK gerekir). Termux'ta SDK çalışmaz;
 bunun yerine repoyu GitHub'a yükle, **Actions → APK → Run workflow**, çıkan `distrodurum-apk` dosyasını indir.
 
 Uygulama içinde: Node sunucusu (`127.0.0.1:5174`) + AxioDB, veritabanı `/sdcard/devnet@0.0.0.0`.
